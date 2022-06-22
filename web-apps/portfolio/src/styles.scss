@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  /* colors */
+  --color-deep-dark-gray: #18191a;
+  --color-dark-gray: #242526;
+  --color-light-dark-gray: #3a3b3c;
+
+  --color-ultra-light-gray: #ffffff;
+  --color-light-gray: #f0f2f5;
+  --color-dark-light-gray: #f2f3f5;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}

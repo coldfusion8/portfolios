@@ -1,5 +1,17 @@
-<div class="container">
-  <svg class="svg">
-    <circle #circle class="circle" cx="100" cy="100" r="90" />
+<div #container class="container">
+  <svg #svg class="svg">
+    <linearGradient id="gradient-fill" x1="0" y1="0" x2="1" y2="0.5">
+      <stop offset="0" stop-color="#fff200" />
+      <stop offset="0.14285714285714285" stop-color="#ffdc00" />
+      <stop offset="0.2857142857142857" stop-color="#ffc500" />
+      <stop offset="0.42857142857142855" stop-color="#ffae00" />
+      <stop offset="0.5714285714285714" stop-color="#ff9600" />
+      <stop offset="0.7142857142857142" stop-color="#ff7c00" />
+      <stop offset="0.8571428571428571" stop-color="#ff6100" />
+      <stop offset="1" stop-color="#ff4000" />
+    </linearGradient>
+    <circle #circle class="circle" cx="0" cy="0" r="0" />
+    <circle #inner class="inner-circle" cx="0" cy="0" r="0" />
+    <circle #outer class="outer-circle" cx="0" cy="0" r="0" />
   </svg>
 </div>

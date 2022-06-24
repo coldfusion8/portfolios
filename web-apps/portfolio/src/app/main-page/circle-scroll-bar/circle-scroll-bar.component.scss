@@ -1,24 +1,31 @@
 :host {
-  --width: 500px;
+  --width: 400px;
   --height: 500px;
+  --inner-color: black;
+  --fill-color: linear-gradient(90deg, rgba(124, 124, 124, 1) 0%, rgba(255, 226, 0, 1) 25%, rgba(249, 255, 0, 1) 50%);
+  --outer-color: black;
 
   .container {
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
     position: relative;
 
     .svg {
+      top: 0;
       position: absolute;
-      width: 100%;
-      height: 100%;
+      width: 400px;
+      height: 200px;
       fill: none;
       transform: rotate(-90deg);
 
       .circle {
-        stroke: #000;
-        stroke-width: 4px;
-        stroke-dasharray: 565;
-        stroke-dashoffset: 0;
+        stroke: url(#gradient-fill);
+      }
+      .inner-circle {
+        stroke: var(--inner-color);
+      }
+      .outer-circle {
+        stroke: var(--outer-color);
       }
     }
   }

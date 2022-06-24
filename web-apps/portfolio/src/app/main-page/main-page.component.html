@@ -1,1 +1,18 @@
-<app-circle-scroll-bar [percent]="percent"></app-circle-scroll-bar>
+<div class="content">
+  <div class="top-bar">
+    <app-switch (darkModeChange)="changeDarkMode($event)"></app-switch>
+  </div>
+  <div class="page-content">
+    <div class="side-bar">
+      <div class="circle-scroll-bar-container"><app-circle-scroll-bar [percent]="percent"></app-circle-scroll-bar></div>
+    </div>
+    <div #scrollable class="scrollable-page">
+      <div class="page-content-mock"></div>
+      <div class="page-content-mock"></div>
+      <div class="page-content-mock"></div>
+      <div class="page-content-mock"></div>
+      <div class="page-content-mock"></div>
+      <div class="page-content-mock"></div>
+    </div>
+  </div>
+</div>

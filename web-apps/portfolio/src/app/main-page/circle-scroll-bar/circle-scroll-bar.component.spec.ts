@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { CircleScrollBarComponent } from './circle-scroll-bar.component';
 
@@ -6,7 +6,7 @@ describe('CircleScrollBarComponent', () => {
   let component: CircleScrollBarComponent;
   let fixture: ComponentFixture<CircleScrollBarComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ CircleScrollBarComponent ]
     })

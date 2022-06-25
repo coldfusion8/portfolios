@@ -1,5 +1,4 @@
 import { Component, ElementRef, EventEmitter, Output } from '@angular/core';
-import { DarkModChangeEvent } from '../../Events/DarkModChangeEvent';
 
 @Component({
   selector: 'app-switch',
@@ -15,7 +14,6 @@ export class SwitchComponent {
   public checkboxValue = false;
 
   public valueChange(): void {
-    console.log(this.checkboxValue);
     this.darkModeChange.emit(this.checkboxValue);
   }
 }

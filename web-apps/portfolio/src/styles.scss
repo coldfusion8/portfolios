@@ -8,6 +8,20 @@
   --color-ultra-light-gray: #ffffff;
   --color-light-gray: #eaeaea;
   --color-dark-light-gray: #d6d6d6;
+
+  --icon-color-light: #ffffff;
+  --icon-color-dark: #000000;
+
+  /* spacing */
+  --spacing-xs: 4px;
+  --spacing-s: 8px;
+  --spacing-m: 16px;
+  --spacing-l: 32px;
+  --spacing-xl: 64px;
+
+  /* transitions */
+  --transition-short: 0.5s;
+  --transition-long: 1s;
 }
 
 body,

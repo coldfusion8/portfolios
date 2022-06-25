@@ -1,0 +1,21 @@
+:host {
+  --thumb-color: var(--color-ultra-light-gray);
+  --switch-icon-color: var(--icon-color-dark);
+
+  .dark-mode-switch {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+
+    app-switch {
+      --color-thumb: var(--thumb-color);
+    }
+
+    jupiter-icon {
+      margin: 0 var(--spacing-xs);
+
+      --icon-color: var(--switch-icon-color);
+      --transitions: background-color var(--transition-short);
+    }
+  }
+}

@@ -5,9 +5,12 @@
 
   --height: 30px;
   --width: 60px;
-  --transition-duration: 0.5s;
+  --transition-duration: var(--transition-short);
+
+  height: var(--height);
 
   input[type='checkbox'] {
+    margin: 0;
     position: relative;
     width: var(--width);
     height: var(--height);
@@ -40,5 +43,6 @@
 
   input:checked[type='checkbox']::before {
     left: calc(var(--width) - var(--height));
+    background-color: var(--color-thumb);
   }
 }

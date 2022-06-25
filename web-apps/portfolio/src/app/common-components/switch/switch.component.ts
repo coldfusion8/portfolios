@@ -7,13 +7,13 @@ import { Component, ElementRef, EventEmitter, Output } from '@angular/core';
 })
 export class SwitchComponent {
   @Output()
-  public darkModeChange = new EventEmitter<boolean>();
+  public switchChange = new EventEmitter<boolean>();
 
   constructor(private readonly elementRef: ElementRef) {}
 
   public checkboxValue = false;
 
   public valueChange(): void {
-    this.darkModeChange.emit(this.checkboxValue);
+    this.switchChange.emit(this.checkboxValue);
   }
 }

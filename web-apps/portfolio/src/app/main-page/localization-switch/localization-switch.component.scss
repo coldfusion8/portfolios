@@ -1,0 +1,21 @@
+:host {
+  --thumb-color: var(--color-ultra-light-gray);
+  --font-color: var(--font-color-dark);
+
+  .dark-mode-switch {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+
+    app-switch {
+      --color-thumb: var(--thumb-color);
+    }
+
+    div {
+      margin: 0 var(--spacing-xs);
+      font-weight: bold;
+      color: var(--font-color);
+      transition: color var(--transition-short);
+    }
+  }
+}

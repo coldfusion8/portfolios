@@ -39,4 +39,8 @@ export class MainPageComponent implements AfterViewInit {
   public changeDarkMode(newValue: boolean) {
     (this.elementRef.nativeElement as Element).toggleAttribute('dark', newValue);
   }
+
+  public changeLocalization(newValue: boolean) {
+    this.translateService.use(newValue ? 'hu-HU' : 'en-US');
+  }
 }

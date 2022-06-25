@@ -8,12 +8,14 @@
   --color-normal: var(--color-light-gray);
   --color-dark: var(--color-dark-light-gray);
   --color-base-icon: var(--icon-color-dark);
+  --color-base-font: var(--font-color-dark);
 
   &[dark] {
     --color-light: var(--color-light-dark-gray);
     --color-normal: var(--color-dark-gray);
     --color-dark: var(--color-deep-dark-gray);
     --color-base-icon: var(--icon-color-light);
+    --color-base-font: var(--font-color-light);
   }
 
   .content {
@@ -35,6 +37,11 @@
       app-dark-mode-switch {
         --thumb-color: var(--color-light);
         --switch-icon-color: var(--color-base-icon);
+      }
+
+      app-localization-switch {
+        --thumb-color: var(--color-light);
+        --font-color: var(--color-base-font);
       }
     }
 
@@ -68,6 +75,8 @@
 
         .page-content-mock {
           height: 1000px;
+          color: var(--color-base-font);
+          transition: color var(--transition-short);
         }
       }
     }

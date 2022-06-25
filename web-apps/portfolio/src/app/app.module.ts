@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { DarkModeSwitchComponent } from './main-page/dark-mode-switch/dark-mode-switch.component';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { translateHTTPLoaderFactory } from './translateHTTPLoaderFactory';
+import { LocalizationSwitchComponent } from './main-page/localization-switch/localization-switch.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { translateHTTPLoaderFactory } from './translateHTTPLoaderFactory';
     PageContentComponent,
     CircleScrollBarComponent,
     SwitchComponent,
-    DarkModeSwitchComponent
+    DarkModeSwitchComponent,
+    LocalizationSwitchComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import './registerLitComponents';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,8 @@ import { CircleScrollBarComponent } from './main-page/circle-scroll-bar/circle-s
 import { SwitchComponent } from './common-components/switch/switch.component';
 import { FormsModule } from '@angular/forms';
 import { DarkModeSwitchComponent } from './main-page/dark-mode-switch/dark-mode-switch.component';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { translateHTTPLoaderFactory } from './translateHTTPLoaderFactory';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,20 @@ import { DarkModeSwitchComponent } from './main-page/dark-mode-switch/dark-mode-
     SwitchComponent,
     DarkModeSwitchComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      defaultLanguage: 'en-us',
+      loader: {
+        provide: TranslateLoader,
+        useFactory: translateHTTPLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
+  ],
   providers: [],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

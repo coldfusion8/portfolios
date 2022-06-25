@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-main-page',
@@ -10,7 +11,7 @@ export class MainPageComponent implements AfterViewInit {
   private scrollableContent?: ElementRef<HTMLDivElement>;
 
   public percent = 0;
-  constructor(private readonly elementRef: ElementRef) {
+  constructor(private readonly elementRef: ElementRef, private readonly translateService: TranslateService) {
     this.updateScroll = this.updateScroll.bind(this);
   }
 

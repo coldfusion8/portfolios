@@ -30,7 +30,7 @@ import { translateHTTPLoaderFactory } from './translateHTTPLoaderFactory';
     FormsModule,
     HttpClientModule,
     TranslateModule.forRoot({
-      defaultLanguage: 'en-us',
+      defaultLanguage: 'en-US',
       loader: {
         provide: TranslateLoader,
         useFactory: translateHTTPLoaderFactory,

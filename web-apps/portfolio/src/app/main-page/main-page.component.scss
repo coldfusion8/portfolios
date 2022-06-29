@@ -9,6 +9,9 @@
   --color-dark: var(--color-dark-light-gray);
   --color-base-icon: var(--icon-color-dark);
   --color-base-font: var(--font-color-dark);
+  --color-opposite-light: var(--color-light-dark-gray);
+  --color-opposite-normal: var(--color-dark-gray);
+  --color-opposite-dark: var(--color-deep-dark-gray);
 
   &[dark] {
     --color-light: var(--color-light-dark-gray);
@@ -16,6 +19,9 @@
     --color-dark: var(--color-deep-dark-gray);
     --color-base-icon: var(--icon-color-light);
     --color-base-font: var(--font-color-light);
+    --color-opposite-light: var(--color-ultra-light-gray);
+    --color-opposite-normal: var(--color-light-gray);
+    --color-opposite-dark: var(--color-dark-light-gray);
   }
 
   .content {

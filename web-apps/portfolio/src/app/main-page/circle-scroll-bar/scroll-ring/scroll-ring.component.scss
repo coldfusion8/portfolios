@@ -1,0 +1,10 @@
+.svg {
+  top: 0;
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  fill: none;
+  stroke: var(--color-opposite-normal);
+  right: 0;
+  transition: stroke var(--transition-short);
+}

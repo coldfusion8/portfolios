@@ -14,6 +14,9 @@ import { DarkModeSwitchComponent } from './main-page/dark-mode-switch/dark-mode-
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { translateHTTPLoaderFactory } from './translateHTTPLoaderFactory';
 import { LocalizationSwitchComponent } from './main-page/localization-switch/localization-switch.component';
+import { ScrollRingComponent } from './main-page/circle-scroll-bar/scroll-ring/scroll-ring.component';
+import { TriangleComponent } from './main-page/circle-scroll-bar/triangle/triangle.component';
+import { CircularMenuComponent } from './main-page/circle-scroll-bar/circular-menu/circular-menu.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { LocalizationSwitchComponent } from './main-page/localization-switch/loc
     CircleScrollBarComponent,
     SwitchComponent,
     DarkModeSwitchComponent,
-    LocalizationSwitchComponent
+    LocalizationSwitchComponent,
+    ScrollRingComponent,
+    TriangleComponent,
+    CircularMenuComponent
   ],
   imports: [
     BrowserModule,

@@ -9,6 +9,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class MainPageComponent implements AfterViewInit {
   @ViewChild('scrollable')
   private scrollableContent?: ElementRef<HTMLDivElement>;
+  public menuItems: string[] = [];
 
   public percent = 0;
   constructor(private readonly elementRef: ElementRef, private readonly translateService: TranslateService) {
@@ -16,13 +17,18 @@ export class MainPageComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    console.log('start');
     if (!this.scrollableContent) {
       return;
     }
-    console.log(this.scrollableContent);
 
     this.scrollableContent.nativeElement.addEventListener('scroll', this.updateScroll);
+    this.scrollableContent.nativeElement.querySelectorAll('[menuName]').forEach(element => {
+      const name = element.getAttribute('menuName');
+      if (name) {
+        this.menuItems.push(name);
+      }
+    });
+    console.log(this.menuItems);
   }
 
   private updateScroll(): void {

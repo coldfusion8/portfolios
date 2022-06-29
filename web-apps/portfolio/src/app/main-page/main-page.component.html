@@ -5,15 +5,17 @@
   </div>
   <div class="page-content">
     <div class="side-bar">
-      <div class="circle-scroll-bar-container"><app-circle-scroll-bar [percent]="percent"></app-circle-scroll-bar></div>
+      <div class="circle-scroll-bar-container">
+        <app-circle-scroll-bar [menuItems]="menuItems" [percent]="percent"></app-circle-scroll-bar>
+      </div>
     </div>
     <div #scrollable class="scrollable-page">
-      <div class="page-content-mock">{{ 'title' | translate }}</div>
-      <div class="page-content-mock"></div>
-      <div class="page-content-mock"></div>
-      <div class="page-content-mock"></div>
-      <div class="page-content-mock"></div>
-      <div class="page-content-mock"></div>
+      <div menuName="start" class="page-content-mock">{{ 'title' | translate }}</div>
+      <div menuName="about" class="page-content-mock"></div>
+      <div menuName="skills" class="page-content-mock"></div>
+      <div menuName="project" class="page-content-mock"></div>
+      <div menuName="workspace" class="page-content-mock"></div>
+      <div menuName="something" class="page-content-mock"></div>
     </div>
   </div>
 </div>

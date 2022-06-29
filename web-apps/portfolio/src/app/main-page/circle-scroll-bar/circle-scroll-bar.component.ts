@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, Input, OnChanges, ViewChild } from '@angular/core';
+import { ScrollRingComponent } from './scroll-ring/scroll-ring.component';
 
 @Component({
   selector: 'app-circle-scroll-bar',
@@ -12,11 +13,24 @@ export class CircleScrollBarComponent implements AfterViewInit, OnChanges {
   private innerCircle?: ElementRef<SVGCircleElement>;
   @ViewChild('outer')
   private outerCircle?: ElementRef<SVGCircleElement>;
+  @ViewChild('middleSphere')
+  private middleSphere?: ElementRef<HTMLDivElement>;
+
+  @ViewChild('innerScrollRing')
+  private innerScrollRing?: ScrollRingComponent;
+  @ViewChild('outerScrollRing')
+  private outerScrollRing?: ScrollRingComponent;
 
   @ViewChild('container')
   private container?: ElementRef<HTMLDivElement>;
   @ViewChild('svg')
   private svg?: ElementRef<SVGElement>;
+
+  @Input()
+  public menuItems: string[] = [];
+
+  @Input()
+  public percent: number = 0;
 
   constructor(private readonly elementRef: ElementRef) {
     this.updateCircle = this.updateCircle.bind(this);
@@ -27,25 +41,31 @@ export class CircleScrollBarComponent implements AfterViewInit, OnChanges {
   public lineWidth = 10;
   public innerCircleLineWidth = 2;
   public outerCircleLineWidth = 2;
+
   private circleYPosition = '0';
   private circleRadius = '0';
   private fullCircle = 0;
-
-  @Input()
-  public percent: number = 0;
 
   ngOnChanges(): void {
     this.changeCircleFill(this.percent);
   }
 
   ngAfterViewInit(): void {
-    console.log(this.circle, this.percent);
     this.updateCircle();
     this.changeCircleFill(this.percent);
   }
 
   private updateCircle() {
-    if (!this.circle || !this.container || !this.innerCircle || !this.outerCircle || !this.svg) {
+    if (
+      !this.circle ||
+      !this.container ||
+      !this.innerCircle ||
+      !this.outerCircle ||
+      !this.svg ||
+      !this.middleSphere ||
+      !this.innerScrollRing ||
+      !this.outerScrollRing
+    ) {
       return;
     }
 
@@ -56,7 +76,7 @@ export class CircleScrollBarComponent implements AfterViewInit, OnChanges {
     const innerCircle = this.innerCircle.nativeElement;
     const outerCircle = this.outerCircle.nativeElement;
     const svgElement = this.svg.nativeElement;
-
+    const middleSphere = this.middleSphere.nativeElement;
     containerElement.style.width = `${this.radius}px`;
     containerElement.style.height = `${this.radius * 2}px`;
 
@@ -88,14 +108,23 @@ export class CircleScrollBarComponent implements AfterViewInit, OnChanges {
     );
     outerCircle.style.strokeWidth = `${this.outerCircleLineWidth}`;
 
+    /* middle sphere */
+    middleSphere.style.width = `${this.radius}px`;
+    middleSphere.style.height = `${this.radius}px`;
+
+    /* scrollRings */
+    this.innerScrollRing.updateSize(this.radius + this.radius / 5);
+    this.outerScrollRing.updateSize(this.radius + this.radius / 2);
     this.changeCircleFill(this.percent);
   }
 
   public changeCircleFill(percent: number): void {
-    if (!this.circle) {
+    if (!this.circle || !this.innerScrollRing || !this.outerScrollRing) {
       return;
     }
 
+    this.innerScrollRing.updatePercent(this.percent);
+    this.outerScrollRing.updatePercent(-this.percent);
     this.circle.nativeElement.style.strokeDashoffset = `${(this.fullCircle / 100) * (100 - percent / 2)}`;
   }
 }

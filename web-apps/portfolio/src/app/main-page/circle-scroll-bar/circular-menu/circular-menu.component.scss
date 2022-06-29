@@ -1,0 +1,34 @@
+.menu-item-container {
+  width: 100%;
+  height: 100%;
+  right: 50%;
+  position: absolute;
+
+  .menu-item {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+
+    .button-container {
+      width: 200px;
+      height: 100%;
+      top: -50%;
+      .button {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        position: absolute;
+        top: -50%;
+        .text {
+          font-size: 20px;
+          font-weight: bold;
+          color: var(--color-base-font);
+          transition: color var(--transition-short);
+        }
+      }
+    }
+  }
+}

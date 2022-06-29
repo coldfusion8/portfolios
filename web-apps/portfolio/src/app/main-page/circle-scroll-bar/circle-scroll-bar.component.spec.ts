@@ -6,12 +6,13 @@ describe('CircleScrollBarComponent', () => {
   let component: CircleScrollBarComponent;
   let fixture: ComponentFixture<CircleScrollBarComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [ CircleScrollBarComponent ]
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [CircleScrollBarComponent]
+      }).compileComponents();
     })
-    .compileComponents();
-  }));
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(CircleScrollBarComponent);

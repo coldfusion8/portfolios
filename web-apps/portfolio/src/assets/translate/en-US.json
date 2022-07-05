@@ -1,1 +1,1 @@
-{ "title": "welcome" }
+{ "title": "welcome", "sections": { "home": "Home", "about": "About me", "skills": "Skills", "projects": "Projects" } }

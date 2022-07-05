@@ -29,6 +29,7 @@
           font-weight: bold;
           color: var(--color-base-font);
           transition: var(--transition-short);
+          white-space: nowrap;
           cursor: pointer;
 
           &:hover {

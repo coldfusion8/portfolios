@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, Input, OnChanges, ViewChild } from '@angular/core';
+import { MenuItem } from '../types';
 import { ScrollRingComponent } from './scroll-ring/scroll-ring.component';
 
 @Component({
@@ -27,7 +28,7 @@ export class CircleScrollBarComponent implements AfterViewInit, OnChanges {
   private svg?: ElementRef<SVGElement>;
 
   @Input()
-  public menuItems: string[] = [];
+  public menuItems: MenuItem[] = [];
 
   @Input()
   public percent: number = 0;

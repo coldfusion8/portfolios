@@ -13,20 +13,32 @@
     flex-direction: column;
 
     .button-container {
-      width: 200px;
+      width: 0;
       height: 100%;
       top: -50%;
+
       .button {
         display: flex;
         align-items: center;
         height: 100%;
         position: absolute;
         top: -50%;
+
         .text {
           font-size: 20px;
           font-weight: bold;
           color: var(--color-base-font);
-          transition: color var(--transition-short);
+          transition: var(--transition-short);
+          cursor: pointer;
+
+          &:hover {
+            font-size: 25px;
+          }
+
+          &.selected {
+            color: orange;
+            font-size: 25px;
+          }
         }
       }
     }

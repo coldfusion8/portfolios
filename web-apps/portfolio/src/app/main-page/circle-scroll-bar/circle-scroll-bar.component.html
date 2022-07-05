@@ -17,8 +17,8 @@
   <app-triangle [radius]="radius"></app-triangle>
   <app-scroll-ring #innerScrollRing lineWidth="{{ radius / 10 }}"></app-scroll-ring>
   <app-scroll-ring #outerScrollRing lineWidth="{{ radius / 10 }}"></app-scroll-ring>
-  <app-circular-menu [radius]="radius" [menuItems]="menuItems" [percent]="percent"></app-circular-menu>
   <div class="middle">
     <div #middleSphere class="sphere"></div>
   </div>
+  <app-circular-menu [radius]="radius" [menuItems]="menuItems" [percent]="percent"></app-circular-menu>
 </div>

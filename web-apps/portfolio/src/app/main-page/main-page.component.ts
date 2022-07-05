@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { MenuItem } from './types';
 
 @Component({
   selector: 'app-main-page',
@@ -9,7 +10,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class MainPageComponent implements AfterViewInit {
   @ViewChild('scrollable')
   private scrollableContent?: ElementRef<HTMLDivElement>;
-  public menuItems: string[] = [];
+  public menuItems: MenuItem[] = [];
 
   public percent = 0;
   constructor(private readonly elementRef: ElementRef, private readonly translateService: TranslateService) {
@@ -25,16 +26,19 @@ export class MainPageComponent implements AfterViewInit {
     this.scrollableContent.nativeElement.querySelectorAll('[menuName]').forEach(element => {
       const name = element.getAttribute('menuName');
       if (name) {
-        this.menuItems.push(name);
+        this.menuItems.push({ name: name, content: element, selected: true } as MenuItem);
       }
     });
-    console.log(this.menuItems);
+
+    this.setElementInView();
   }
 
   private updateScroll(): void {
     if (!this.scrollableContent) {
       return;
     }
+
+    this.setElementInView();
 
     const scrollableElement = this.scrollableContent.nativeElement;
 
@@ -48,5 +52,17 @@ export class MainPageComponent implements AfterViewInit {
 
   public changeLocalization(newValue: boolean) {
     this.translateService.use(newValue ? 'hu-HU' : 'en-US');
+  }
+
+  private setElementInView() {
+    const rects = this.menuItems.map(menuItem => {
+      return Math.abs(menuItem.content.getBoundingClientRect().y);
+    });
+
+    this.menuItems.forEach(element => {
+      element.selected = false;
+    });
+
+    this.menuItems[rects.indexOf(Math.min(...rects))].selected = true;
   }
 }

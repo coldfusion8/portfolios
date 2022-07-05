@@ -9,13 +9,17 @@
         <app-circle-scroll-bar [menuItems]="menuItems" [percent]="percent"></app-circle-scroll-bar>
       </div>
     </div>
+    <div class="spacer">
+      <div class="mid-circle"></div>
+    </div>
     <div #scrollable class="scrollable-page">
       <div menuName="start" class="page-content-mock">{{ 'title' | translate }}</div>
-      <div menuName="about" class="page-content-mock"></div>
-      <div menuName="skills" class="page-content-mock"></div>
-      <div menuName="project" class="page-content-mock"></div>
-      <div menuName="workspace" class="page-content-mock"></div>
-      <div menuName="something" class="page-content-mock"></div>
+      <div menuName="about" class="page-content-mock">about</div>
+      <div menuName="skills" class="page-content-mock">skills</div>
+      <div menuName="project" class="page-content-mock">project</div>
+      <div menuName="workspace" class="page-content-mock">workspace</div>
+      <div menuName="something" class="page-content-mock">something</div>
+      <div menuName="somethingNew" class="page-content-mock">something new</div>
     </div>
   </div>
 </div>

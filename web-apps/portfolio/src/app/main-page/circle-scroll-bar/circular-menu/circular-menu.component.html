@@ -2,7 +2,9 @@
   <div class="menu-item" *ngFor="let item of menuItems">
     <div class="button-container">
       <div class="button">
-        <div class="text">{{ item }}</div>
+        <div class="text" [class.selected]="item.selected" (click)="menuClick(item)">
+          {{ item.name | titlecase }}
+        </div>
       </div>
     </div>
   </div>

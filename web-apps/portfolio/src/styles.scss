@@ -25,6 +25,10 @@
   /* transitions */
   --transition-short: 0.5s;
   --transition-long: 1s;
+
+  /* z-index */
+  --top-bar-z-index: 10000;
+  --content-z-index: 1000;
 }
 
 body,

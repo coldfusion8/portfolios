@@ -22,6 +22,7 @@
     "@angular/router": "^14.0.3",
     "@ngx-translate/core": "^14.0.0",
     "@ngx-translate/http-loader": "^7.0.0",
+    "gsap": "^3.10.4",
     "lit-element": "^3.0.1",
     "prettier": "1.19.1",
     "prettier-check": "2.0.0",

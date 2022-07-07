@@ -1,0 +1,1 @@
+export { getRandomWholeNumber } from './getRandomWholeNumber';
